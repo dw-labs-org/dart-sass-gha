@@ -13,7 +13,7 @@ runs:
   steps:
     - uses: robinraju/release-downloader@v1
       with:
-        repository: "https://github.com/sass/dart-sass"
+        repository: "sass/dart-sass"
         latest: true
         filename: "dart-sass-*-linux-x64.tar.gz "
         tarBall: false
