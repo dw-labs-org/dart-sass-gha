@@ -4,4 +4,4 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: dw-labs-org/dart-sass-gha
+      - uses: dw-labs-org/dart-sass-gha@main
