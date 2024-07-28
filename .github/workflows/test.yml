@@ -1,0 +1,7 @@
+name: "Test the dart sass action"
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dw-labs-org/dart-sass-gha
