@@ -1,10 +1,19 @@
 name: "Test the dart sass action"
 on: push
 jobs:
-  test:
+  test-latest:
     runs-on: ubuntu-latest
     steps:
       - uses: dw-labs-org/dart-sass-gha@main
+      - name: Run Dart Sass
+        run: sass --version
+        shell: bash
+  test-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dw-labs-org/dart-sass-gha@main
+        with:
+          version: "1.77.2"
       - name: Run Dart Sass
         run: sass --version
         shell: bash
