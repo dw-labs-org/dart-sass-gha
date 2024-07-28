@@ -1,17 +1,15 @@
-name: helm-cli
-branding:
-  color: green
-  icon: package
-description: Deploy Helm chart in a GitHub action
+name: dart sass
+description: Install dart sass from github repo
 inputs:
   version:
-    default: ""
+    default: latest
     description: Version of dart-sass to download from repo.
-    required: true
+    required: false
 runs:
   using: composite
   steps:
-    - uses: robinraju/release-downloader@v1
+    - if: default == "latest"
+      uses: robinraju/release-downloader@v1
       with:
         repository: "sass/dart-sass"
         latest: true
@@ -20,6 +18,15 @@ runs:
         zipBall: false
         extract: true
         #  dart-sass-1.77.8-linux-x64.tar.gz
+    - if: default != "latest"
+      uses: robinraju/release-downloader@v1
+      with:
+        repository: "sass/dart-sass"
+        tag: ${{ inputs.version }}
+        filename: "dart-sass-*-linux-x64.tar.gz "
+        tarBall: false
+        zipBall: false
+        extract: true
     - name: Add to path
       run: echo "dart-sass" >> $GITHUB_PATH
       shell: bash    
