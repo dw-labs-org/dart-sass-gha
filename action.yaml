@@ -20,6 +20,6 @@ runs:
         zipBall: false
         extract: true
         #  dart-sass-1.77.8-linux-x64.tar.gz
-    - name: list contents
-      run: ls -la
-      shell: bash
+    - name: Add to path
+      run: echo "dart-sass" >> $GITHUB_PATH
+      shell: bash    
