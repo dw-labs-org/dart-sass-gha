@@ -1,4 +1,7 @@
 name: dart sass
+branding:
+  icon: arrow-down
+  color: red
 description: Install dart sass from github repo
 inputs:
   version:
