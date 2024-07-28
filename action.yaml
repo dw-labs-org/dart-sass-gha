@@ -8,7 +8,7 @@ inputs:
 runs:
   using: composite
   steps:
-    - if: default == "latest"
+    - if: inputs.version == "latest"
       uses: robinraju/release-downloader@v1
       with:
         repository: "sass/dart-sass"
@@ -18,7 +18,7 @@ runs:
         zipBall: false
         extract: true
         #  dart-sass-1.77.8-linux-x64.tar.gz
-    - if: default != "latest"
+    - if: inputs.version != "latest"
       uses: robinraju/release-downloader@v1
       with:
         repository: "sass/dart-sass"
