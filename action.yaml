@@ -31,5 +31,5 @@ runs:
         zipBall: false
         extract: true
     - name: Add to path
-      run: echo "dart-sass" >> $GITHUB_PATH
+      run: echo "$HOME/dart-sass" >> $GITHUB_PATH
       shell: bash    
